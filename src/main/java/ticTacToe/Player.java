@@ -42,11 +42,6 @@ public class Player {
     public Symbol getSymbol() {
         return symbol;
     }
-
-    public void setSymbol(Symbol symbol) {
-        this.symbol = symbol;
-    }
-
     public String getName() {
         return name;
     }

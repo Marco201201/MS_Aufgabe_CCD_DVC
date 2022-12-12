@@ -1,17 +1,16 @@
 package main.java.ticTacToe;
 
 import java.util.Arrays;
-import java.util.InputMismatchException;
 
 public class Board {
-    private String[] fields;
+    private final String[] fields;
     // TicTacToe game consists of 9 fields
     final int FIELDSCOUNT = 9;
     // There are 8 victory possibilities
     final int VICTORYPOSSIBILITIESCOUNT = 8;
 
     /**
-     * onstructor of the Board class
+     * Constructor of the Board class
      * Sets the default values for the fields
      */
     public Board() {
@@ -60,42 +59,26 @@ public class Board {
      */
     public boolean isGameWon(Player.Symbol symbol) {
         // Loop through all victory possibilities
-        for (int victoryPossibilitie = 0; victoryPossibilitie < VICTORYPOSSIBILITIESCOUNT; victoryPossibilitie++) {
-            String line = null;
-            switch (victoryPossibilitie) {
-                case 0:
-                    // First row
-                    line = fields[0] + fields[1] + fields[2];
-                    break;
-                case 1:
-                    // Second row
-                    line = fields[3] + fields[4] + fields[5];
-                    break;
-                case 2:
-                    // Third row
-                    line = fields[6] + fields[7] + fields[8];
-                    break;
-                case 3:
-                    // First column
-                    line = fields[0] + fields[3] + fields[6];
-                    break;
-                case 4:
-                    // Second column
-                    line = fields[1] + fields[4] + fields[7];
-                    break;
-                case 5:
-                    // Third column
-                    line = fields[2] + fields[5] + fields[8];
-                    break;
-                case 6:
-                    // Diagonal top left to bottom right
-                    line = fields[0] + fields[4] + fields[8];
-                    break;
-                case 7:
-                    // Diagonal bottom left to top right
-                    line = fields[2] + fields[4] + fields[6];
-                    break;
-            }
+        for (int victoryPossibility = 0; victoryPossibility < VICTORYPOSSIBILITIESCOUNT; victoryPossibility++) {
+            String line = switch (victoryPossibility) {
+                // First row
+                case 0 -> fields[0] + fields[1] + fields[2];
+                // Second row
+                case 1 -> fields[3] + fields[4] + fields[5];
+                // Third row
+                case 2 -> fields[6] + fields[7] + fields[8];
+                // First column
+                case 3 -> fields[0] + fields[3] + fields[6];
+                // Second column
+                case 4 -> fields[1] + fields[4] + fields[7];
+                // Third column
+                case 5 -> fields[2] + fields[5] + fields[8];
+                // Diagonal top left to bottom right
+                case 6 -> fields[0] + fields[4] + fields[8];
+                // Diagonal bottom left to top right
+                case 7 -> fields[2] + fields[4] + fields[6];
+                default -> null;
+            };
             // check if the line match 3 Symbols
             if (line.equals(symbol.toString() + symbol.toString() + symbol.toString())) {
                 return true;
