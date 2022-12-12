@@ -10,14 +10,15 @@ Insgesamt sind die Funktionen dadurch sehr speziell und nicht gut wieder verwend
 
 # Warum handelt es sich bei dem Java Tic Tac Toe um Clean Code?
 
+Der Code ist nach meiner Einschätzung einfach zu lesen, da die Variablen und Funktionen gut benannt sind und entsprechend ihres Zwecks eingesetzt werden.
+Also z.B. keine i's oder v's zum Hochzählen bei Schleifen, sondern sprechende Namen "victoryPossibility" aus denen hervorgeht, was eigentlich hochgezählt wird.
+Kommentare sind klein gehalten und wahrscheinlich in manchen Fällen sogar überhaupt nicht notwendig. Nach meiner Meinung sind zu mindestens kurze Kommentare aber dennoch nicht schädlich, da diese immer einfacher gelesen werden können als Code.
+Die Klassen haben jeweils ihren abgesteckten Aufgabenbereich (Spiel, Spieler, Spielfeld). Es gibt keine Klasse die alles macht. Hierdurch sollten sich die Klassen auch gut um weitere Funktionen erweitern lassen. Die Funktionen sind kurzgehalten und wurden an den Stellen aufgeteilt, an denen sie zu groß geworden sind.
+Die Fehler die im Code erwartet werden, sind mit Try und Catch Blöcken behandelt. Man könnte hier ggf. noch näher spezifizieren. Der Aufwand hierfür ist aber in Abhängigkeit zu Anzahl der Fehler nicht verhältnismäßig. Ähnliches gilt für die automatisierten Tests.
+Man könnte die Funktionen mit Tests überprüfen, müsste dafür aber entweder auf viel Regex setzen oder weitere "Getters" erstellen.  Aufgrund der nicht vorhandenen Komplexität der Software würde ich hier noch davon absehen. Würde man die Software allerdings noch weiter ausbauen, sollte man die Tests wirklich einbauen.
 
 
-
-
-
-
-
-Sachen zum Bash Skript:
+# Alt - Sachen zum Bash Skript:
 
 Ich habe mich dazu entschieden ein altes Bash Skript aus meinem Bachelor zu überarbeiten und die Prinzipien von Code Clean anzuwenden. 
 
